@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title%}Contact{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 class="text-center mt-5">Contact</h1>
+    <div class="card-group mt-5">
+        <div class="card">
+            <img src="{% static '/images/icon/map.png'%}" height="330px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This content is a little bit longer.</p>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static '/images/icon/old-typical-phone.png'%}" height="330px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Card title</h5>
+                <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                <p class="card-text"></p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static '/images/icon/email.png'%}" width="250px" height="330px" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title text-center">Card title</h5>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                    content. This card has even longer content than the first to show that equal height action.</p>
+                <p class="card-text"></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
