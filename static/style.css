@@ -278,6 +278,17 @@ th {
   background-color: #e65242;
 }
 
+/* site footer */
+.site-footer {
+  background-color: rgb(232, 232, 232);
+  text-align: center;
+  padding: 16px;
+}
+
+.site-footer-copyright {
+  font-size: 12px;
+}
+
 
 /* css รูป News&Event post-media  */
 
@@ -1513,3 +1524,4 @@ a {
 .myButton1:hover {
   background-color: #0026fc; /* เปลี่ยนสีพื้นหลังเมื่อเมาส์ผ่านที่ปุ่ม */
 }
+

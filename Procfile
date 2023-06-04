@@ -1,0 +1,1 @@
+web: gunicorn isoconsult.wsgi

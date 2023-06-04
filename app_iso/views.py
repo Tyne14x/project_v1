@@ -39,3 +39,6 @@ def Register(request):
 
 def Contact(request):
     return render(request,"contact.html")
+
+def Document(request):
+    return render(request,"document.html")
