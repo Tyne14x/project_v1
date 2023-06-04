@@ -1,7 +1,17 @@
 {%load static%}
 <!doctype html>
 <html lang="en">
+  <script>
+    window.onscroll = function () {
+      // หากผู้ใช้เลื่อนหน้าเว็บลงมากกว่า 50px จะเพิ่มคลาส sticky เข้าไปใน Navbar
+      if (window.pageYOffset > 50) {
+        document.querySelector('.navbar').classList.add('sticky');
+      } else {
+        document.querySelector('.navbar').classList.remove('sticky');
+      }
+    };
 
+  </script>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -29,7 +39,7 @@
     src="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/js/froala_editor.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.1.0/css/froala_editor.min.css" rel="stylesheet"
     type="text/css" />
-    
+
   {{ form.media }}
 </head>
 
@@ -50,21 +60,13 @@
             <a class="nav-link" aria-current="page" href="{% url 'home-page' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'elerning-page' %}">ELERNING</a>
+            <a class="nav-link" href="{% url 'elerning-page' %}">Elerning</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'news-page' %}">NEWS & EVENTS</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="{% url 'training-page' %}" role="button"
-              data-bs-toggle="dropdown">
-              Training
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{% url 'training-page' %}">training list</a></li>
-              <li><a class="dropdown-item" href="{% url 'courseRegistration' %}">course registration</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'training-page' %}"> Training </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
@@ -79,14 +81,42 @@
         </ul>
         {%else %}
         <ul class="navbar-nav ms-auto">
-          <li><a href="{% url 'login' %}"><button class="btn btn-outline-success ms-3 mb-1">Login</button></a></li>
+          <li><a href="{% url 'login' %}"><button class="myButton">Login</button></a></li>
           <li><a href="{% url 'register-page' %}">
-              <button class="btn btn-outline-primary ms-3 mt-auto">Register</button></a></li>
+              <button class="myButton1">Register</button></a></li>
         </ul>
         {% endif %}
       </div>
     </div>
   </nav>
+  </nav>
+
+
+  <!-- <nav class="navbar">
+    <ul>
+      <li><a href="{% url 'home-page' %}">หน้าแรก</a></li>
+      <li><a href="{% url 'elerning-page' %}">elerning</a></li>
+      <li><a href="{% url 'news-page' %}">NEWS & EVENTS</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      {% if user.is_authenticated %}
+        <a class="navbar-brand ms-auto" href="#profile"><img src="{% static '/images/logo_profile.png'%}"
+            alt="Avatar Logo" style="width:40px;" class="rounded-pill"></a>
+        <font color="brown" class="mt-2"><b>{{user.first_name}}&nbsp&nbsp{{user.last_name}}</b></font>
+        <ul class="navbar-nav ms-2 " style="margin-top: 10px;">
+          <a href="{% url 'logout' %}"><button class="btn btn-outline-danger">Logout</button></a>
+        </ul>
+        {%else %}
+        <ul class="navbar-nav ms-auto">
+          <li><a href="{% url 'login' %}"><button class="btn btn-outline-success ms-3 mb-1">Login</button></a></li>
+          <li><a href="{% url 'register-page' %}">
+              <button class="btn btn-outline-primary ms-3 mt-auto">Register</button></a></li>
+        </ul>
+        {% endif %}
+
+    </ul>
+  </nav> -->
+
+
 
   <!-- Block Content -->
   {% block content %}
@@ -98,6 +128,7 @@
     </div>
 
   </footer>
+  
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- Popper JS -->
