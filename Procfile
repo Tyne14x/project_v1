@@ -1,1 +1,1 @@
-web: gunicorn isoconsult.wsgi –log-file -sw~
+web: gunicorn isoconsult.wsgi –log-file -sw
